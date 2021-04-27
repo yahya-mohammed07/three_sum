@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
-#include <unordered_map>
 #include <ranges>
 #include <numeric>
 
@@ -14,7 +13,7 @@ auto three_sum (T& nums ) ->V
     V result{};
     if ( nums.size() < 3) { return result; }
     else if ( nums.size() == 3 || nums.size() == 4 ) {
-        if ( std::all_of(nums.begin(), nums.end(), [](int i) { return i==0; }) ) {
+        if ( ranges::all_of(nums, [](int i) { return i == 0; }) ) {
             result.push_back( {nums[0],nums[1],nums[2]} );
             return result;
         }
